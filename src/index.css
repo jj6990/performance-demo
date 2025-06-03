@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes position-change {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  50% {
+    top: 150px;
+    left: 150px;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+
+@keyframes transform-change {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(150px, 150px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.animate-position-change {
+  animation: position-change 3s ease-in-out infinite;
+}
+
+.animate-transform-change {
+  animation: transform-change 3s ease-in-out infinite;
+}
+
+html.dark {
+  color-scheme: dark;
+}
