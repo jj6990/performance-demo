@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, X } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 export const OptimizedExample: React.FC = () => {
   const [showBanner, setShowBanner] = useState(true);
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      <Helmet>
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preload" as="image" href="https://images.pexels.com/photos/2387793/pexels-photo-2387793.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" crossOrigin="anonymous" fetchpriority="high" />
+      </Helmet>
       <header className="sticky top-0 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm shadow-sm z-50">
         <div className="container mx-auto px-4">
           <div className="flex items-center h-16">
@@ -26,7 +32,7 @@ export const OptimizedExample: React.FC = () => {
         <div className="absolute top-16 left-0 right-0 bg-blue-600 text-white text-center z-40">
           <div className="container mx-auto px-4 py-3 flex items-center justify-between">
             <p>🎉 Welcome to our demo site! Check out our new features.</p>
-            <button 
+            <button
               onClick={() => setShowBanner(false)}
               className="transform hover:scale-105 transition-transform"
             >
@@ -43,7 +49,7 @@ export const OptimizedExample: React.FC = () => {
               srcSet="https://images.pexels.com/photos/2387793/pexels-photo-2387793.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
               type="image/webp"
             />
-            <img 
+            <img
               src="https://images.pexels.com/photos/2387793/pexels-photo-2387793.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
               alt="Modern office space"
               width="1920"
@@ -56,7 +62,7 @@ export const OptimizedExample: React.FC = () => {
             <div className="max-w-3xl">
               <h1 className="text-5xl font-bold mb-6">Optimized Page Example</h1>
               <p className="text-xl mb-8">This page demonstrates performance best practices and their positive impact on Core Web Vitals.</p>
-              <button 
+              <button
                 className="bg-white text-blue-600 px-8 py-3 rounded-lg font-medium transform hover:scale-105 transition-transform"
               >
                 Learn More
@@ -67,7 +73,7 @@ export const OptimizedExample: React.FC = () => {
 
         <div className="container mx-auto px-4 py-8">
           <h2 className="text-3xl font-bold mb-8">Image Gallery</h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               2387793, // Modern office
