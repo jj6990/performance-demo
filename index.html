@@ -1,11 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Preconnect to font provider -->
+
+    <link rel="preconnect" href="https://images.pexels.com" crossorigin />
+    <link
+      rel="preload"
+      as="image"
+      href="http://localhost:5173/src/assets/images/hero-image-optimized.avif"
+    />
+    <link rel="preload" as="image" href="http://localhost:5173/src/assets/images/card-1.avif" />
+    <link rel="preload" as="image" href="http://localhost:5173/src/assets/images/card-2.avif" />
+    <link rel="preload" as="image" href="http://localhost:5173/src/assets/images/card-3.avif" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="font" type="font/woff2"
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="font"
+    />
+
+    <style>
+      body {
+        font-family: 'Roboto', 'Inter', sans-serif !important;
+      }
+    </style>
+
     <title>Web Performance Demo</title>
-    <meta name="description" content="A demonstration of web performance optimization techniques and Web Vitals improvements">
+    <meta
+      name="description"
+      content="A demonstration of web performance optimization techniques and Web Vitals improvements"
+    />
   </head>
   <body>
     <div id="root"></div>

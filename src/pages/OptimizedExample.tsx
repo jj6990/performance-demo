@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, X } from 'lucide-react';
-import { Helmet } from 'react-helmet-async';
+import heroImage from '../assets/images/hero-image-optimized.avif';
+import image1 from '../assets/images/card-1.avif';
+import image2 from '../assets/images/card-2.avif';
+import image3 from '../assets/images/card-3.avif';
+
 
 export const OptimizedExample: React.FC = () => {
   const [showBanner, setShowBanner] = useState(true);
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <Helmet>
-        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preload" as="image" href="https://images.pexels.com/photos/2387793/pexels-photo-2387793.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" crossOrigin="anonymous" fetchpriority="high" />
-      </Helmet>
       <header className="sticky top-0 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm shadow-sm z-50">
         <div className="container mx-auto px-4">
           <div className="flex items-center h-16">
@@ -46,14 +45,15 @@ export const OptimizedExample: React.FC = () => {
         <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white">
           <picture>
             <source
-              srcSet="https://images.pexels.com/photos/2387793/pexels-photo-2387793.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
+              srcSet={heroImage}
+              media="(min-width: 1024px)"
               type="image/webp"
             />
             <img
-              src="https://images.pexels.com/photos/2387793/pexels-photo-2387793.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
-              alt="Modern office space"
-              width="1920"
-              height="1080"
+              src={heroImage}
+              alt="Hero"
+              width="1176"
+              height="400"
               fetchpriority="high"
               className="absolute inset-0 w-full h-full object-cover mix-blend-overlay"
             />
@@ -76,27 +76,18 @@ export const OptimizedExample: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              2387793, // Modern office
-              3182835, // City buildings
-              3182774, // Architecture
-              2869215, // Business meeting
-              3182812, // Modern interior
-              3182750, // Urban landscape
-              2869207, // Team collaboration
-              3182777, // Design space
-              3182814, // Workspace
-              2869217, // Conference room
-              3182836, // City view
-              2887767  // Creative office
+              image1, // Modern office
+              image2, // City buildings
+              image3, // Architecture
             ].map((photoId, i) => (
               <div key={i} className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
                 <picture>
                   <source
-                    srcSet={`https://images.pexels.com/photos/${photoId}/pexels-photo-${photoId}.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop`}
+                    srcSet={photoId}
                     type="image/webp"
                   />
                   <img
-                    src={`https://images.pexels.com/photos/${photoId}/pexels-photo-${photoId}.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop`}
+                    src={photoId}
                     alt={`Sample image ${i + 1}`}
                     loading="lazy"
                     width="800"
